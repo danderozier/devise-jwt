@@ -18,6 +18,7 @@ module Devise
   # @see Warden::JWTAuth
   def self.jwt
     yield(Devise::JWT.config)
+    Devise::JWT.config.values
   end
 
   add_module(:jwt_authenticatable, strategy: :jwt)
